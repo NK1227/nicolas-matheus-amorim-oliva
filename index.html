@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestão Financeira</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestão Financeira</h1>
+        <form id="form">
+            <input type="text" id="descricao" placeholder="Descrição" required>
+            <input type="text" id="valor" placeholder="Valor (R$)" required>
+            <select id="tipo" required>
+                <option value="">Selecione</option>
+                <option value="receita">Receita</option>
+                <option value="despesa">Despesa</option>
+            </select>
+            <input type="date" id="data" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <input type="date" id="filtroData" placeholder="Filtrar por data">
+        <button onclick="filtrarPorData()">Filtrar</button>
+        <button onclick="imprimirPlanilhaGrafico()">Imprimir</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaBody"></tbody>
+        </table>
+        <canvas id="graficoCanvas" width="800" height="400"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
